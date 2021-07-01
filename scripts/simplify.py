@@ -23,7 +23,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     source_sentences = read_lines(args.filepath)
     pred_sentences = simplify_sentences(source_sentences, model_name=args.model_name)
-    for c, s in zip(source_sentences, pred_sentences):
-        print('-' * 80)
-        print(f'Original:   {c}')
-        print(f'Simplified: {s}')
+    
+    with open('simple.en', 'w') as fo:
+        fo.write(pred_sentences)
