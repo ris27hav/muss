@@ -26,4 +26,4 @@ if __name__ == '__main__':
     
     with open('simple.en', 'w') as fo:
         for sentence in pred_sentences:
-            fo.write(sentence + '\n')
+            fo.write(sentence + '\n\n')
