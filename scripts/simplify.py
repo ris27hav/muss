@@ -25,4 +25,4 @@ if __name__ == '__main__':
     pred_sentences = simplify_sentences(source_sentences, model_name=args.model_name)
     
     with open('simple.en', 'w') as fo:
-        fo.write(pred_sentences)
+        fo.write(str(pred_sentences))
