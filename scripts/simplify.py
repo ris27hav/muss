@@ -5,6 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 import argparse
+import pickle
 
 from muss.simplify import ALLOWED_MODEL_NAMES, simplify_sentences
 from muss.utils.helpers import read_lines
@@ -24,6 +25,5 @@ if __name__ == '__main__':
     source_sentences = read_lines(args.filepath)
     pred_sentences = simplify_sentences(source_sentences, model_name=args.model_name)
     
-    with open('simple.en', 'w') as fo:
-        for sentence in pred_sentences:
-            fo.write(sentence + '\n\n')
+    with open('simple.pkl', 'wb') as fo:
+        pickle.dump(pred_sentences, fo)
